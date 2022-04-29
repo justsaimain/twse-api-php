@@ -18,8 +18,8 @@ $arr_data = json_decode($response->getBody(), true);
 $taiex = $arr_data['taiex'];
 
 $return_data = [
-    'buy' => $taiex['index'],
-    'sell' =>  $taiex['volume'],
+    'buy' => (string) $taiex['index'],
+    'sell' =>  (string) $taiex['volume'],
     'buy1' => substr($taiex['index'], -1),
     'sell1' => substr(explode('.', $taiex['volume'])[0], -1)
 ];
